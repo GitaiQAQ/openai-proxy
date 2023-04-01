@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="source" content="https://dribbble.com/shots/20960499-CVMaker-Inbox" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <style>
+      #aside-controller:checked + aside {
+        transform: translateX(0);
+      }
+
+    </style>
+  </head>
+  <body
+    class="flex min-h-screen flex-col justify-center overflow-hidden bg-gray-100 dark:bg-black text-black dark:text-white"
+  >
+    <div
+      class="rounded-lg container bg-white shadow-lg ring-1 ring-gray-900/5 sm:mx-auto dark:bg-gray-800"
+    >
+      <header class="flex justify-between items-center border-b p-2 pl-4 shadow-sm dark:border-black">
+        [[ ChattyGPT ]]
+        <span class="text-transparent">#4f2dd5</span>
+        <div class="flex-right">
+            <svg class="w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-600 p-2 rounded-md" fill="currentColor" viewBox="0 0 1024 1024"><path d="M785.07008 238.92992V204.8a34.24256 34.24256 0 0 0-34.14016-34.12992H614.4A34.24256 34.24256 0 0 0 580.27008 204.8v34.12992H102.4V307.2h477.87008v34.12992c0 18.76992 15.36 34.12992 34.12992 34.12992h136.52992c18.76992 0 34.14016-15.36 34.14016-34.12992V307.2H921.6v-68.27008H785.07008zM716.8 307.2h-68.27008v-68.27008H716.8V307.2zM443.72992 477.87008v-34.12992C443.72992 424.96 428.36992 409.6 409.6 409.6H273.07008a34.24256 34.24256 0 0 0-34.14016 34.12992v34.12992H102.4v68.27008h136.52992v34.11968a34.24256 34.24256 0 0 0 34.14016 34.14016H409.6c18.76992 0 34.12992-15.36 34.12992-34.14016v-34.11968H921.6v-68.27008H443.72992z m-68.25984 68.27008H307.2v-68.27008h68.27008v68.27008zM716.8 716.8v-34.14016a34.23232 34.23232 0 0 0-34.12992-34.11968H546.12992A34.23232 34.23232 0 0 0 512 682.65984V716.8H102.4v68.25984h409.6V819.2a34.2528 34.2528 0 0 0 34.12992 34.14016h136.54016A34.2528 34.2528 0 0 0 716.8 819.2v-34.14016h204.8V716.8H716.8z m-68.27008 68.25984h-68.25984V716.8h68.25984v68.25984z" /></svg>
+        </div>
+      </header>
+      <div class="rounded-lg relative overflow-y-hidden">
+        <label
+          for="aside-controller"
+          class="absolute ml-3 mt-2 inline-flex rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-50 md:hidden"
+        >
+          <span class="sr-only">Open sidebar</span>
+          <svg
+            class="h-6 w-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              fill-rule="evenodd"
+              d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+            ></path>
+          </svg>
+        </label>
+        <input id="aside-controller" type="checkbox" class="hidden" />
+        <aside
+          class="absolute py-4 left-0 top-0 h-full w-80 -translate-x-full border-r bg-white transition-transform md:translate-x-0 overflow-scroll dark:bg-gray-800 dark:border-black"
+        >
+          <ul>
+            <li>
+              <label
+                for="aside-controller"
+                class="flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 md:hidden"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+                </svg>
+                <span class="ml-3">Close sidebar</span>
+              </label>
+            </li>
+            <li>
+                <ul class="divide-y divide-gray-300/50 dark:divide-black">
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <div class="absolute left-4 text-xs text-red-400 dark:text-red-800">●</div>
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <div class="absolute left-4 text-xs text-red-400 dark:text-red-800">●</div>
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <div class="absolute left-4 text-xs text-red-400 dark:text-red-800">●</div>
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                        href="#"
+                        class="flex flex-col space-y-2 px-8 py-4 text-xs text-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+                        >
+                            <header class="unread">
+                                <span class="font-bold tracking-tight text-black dark:text-white">Marketing & Communications Manager</span>
+                                <star class="float-right">
+                                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+                            </header>
+                            <content class="text-gray-500">
+                                lorem ipsum dolor sit amet consectetur adipisicing elit
+                            </content>
+                            <footer>
+                                <author>by Revolut</author>
+                                <time class="float-right">10:40am</time>
+                            </footer>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+          </ul>
+        </aside>
+        <div class="mx-auto p-4 md:ml-80">
+          <div class="flex flex-col space-y-4">
+            <header class="max-md:pl-10">
+                <span class="font-bold tracking-tight">Marketing & Communications Manager</span>
+                <star class="float-right">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></star>
+            </header>
+            <content class="block overflow-scroll h-96">
+                <ul class="$divide-y">
+                    <li>
+                        <div class="p-4">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-r-md rounded-t-md dark:border-gray-600">
+                                <span class="">
+                                    lorem ipsum dolor sit amet consectetur adipisicing elit
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>received 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 text-right">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-l-md rounded-t-md bg-gray-200 dark:border-gray-900 dark:bg-gray-700">
+                                <span class="">
+                                    lorem ipsum dolor sit amet consectetur adipisicing elit
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>send 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 ">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-r-md rounded-t-md dark:border-gray-600">
+                                <span class="">
+                                    There are several ways to generate a logo for ChattyGPT. One method is to use a logo generator tool that allows you to select different shapes, fonts, and colors to create a custom logo on your own. Some popular logo generator tools include Canva, Tailor Brands, and Logo Maker. Another option is to hire a professional graphic designer to create a custom logo specifically for ChattyGPT. You can find a freelancer on websites such as Fiverr or Upwork, or hire a design agency to work with. What kind of logo are you looking for? Depending on your preferences and requirements, different methods of generating a logo may be more suitable for you.
+
+
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>received 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 text-right">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-l-md rounded-t-md bg-gray-200 dark:border-gray-900 dark:bg-gray-700">
+                                <span class="">
+                                    lorem ipsum dolor sit amet consectetur adipisicing elit
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>send 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 ">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-r-md rounded-t-md dark:border-gray-600">
+                                <span class="">
+<pre class="javascript" style="font-family:monospace;">async <span style="color: #000066; font-weight: bold;">function</span> checkSyntax<span style="color: #009900;">(</span>source<span style="color: #339933;">,</span> filename<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+  <span style="color: #000066; font-weight: bold;">const</span> <span style="color: #009900;">{</span> getOptionValue <span style="color: #009900;">}</span> <span style="color: #339933;">=</span> require<span style="color: #009900;">(</span><span style="color: #3366CC;">'internal/options'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  let isModule <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">false</span><span style="color: #339933;">;</span>
+  <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">(</span>filename <span style="color: #339933;">===</span> <span style="color: #3366CC;">'[stdin]'</span> <span style="color: #339933;">||</span> filename <span style="color: #339933;">===</span> <span style="color: #3366CC;">'[eval]'</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    isModule <span style="color: #339933;">=</span> getOptionValue<span style="color: #009900;">(</span><span style="color: #3366CC;">'--input-type'</span><span style="color: #009900;">)</span> <span style="color: #339933;">===</span> <span style="color: #3366CC;">'module'</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">}</span> <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">{</span>
+    <span style="color: #000066; font-weight: bold;">const</span> <span style="color: #009900;">{</span> defaultResolve <span style="color: #009900;">}</span> <span style="color: #339933;">=</span> require<span style="color: #009900;">(</span><span style="color: #3366CC;">'internal/modules/esm/resolve'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000066; font-weight: bold;">const</span> <span style="color: #009900;">{</span> defaultGetFormat <span style="color: #009900;">}</span> <span style="color: #339933;">=</span> require<span style="color: #009900;">(</span><span style="color: #3366CC;">'internal/modules/esm/get_format'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000066; font-weight: bold;">const</span> <span style="color: #009900;">{</span> url <span style="color: #009900;">}</span> <span style="color: #339933;">=</span> await defaultResolve<span style="color: #009900;">(</span>pathToFileURL<span style="color: #009900;">(</span>filename<span style="color: #009900;">)</span>.<span style="color: #660066;">toString</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000066; font-weight: bold;">const</span> format <span style="color: #339933;">=</span> await defaultGetFormat<span style="color: #009900;">(</span>url<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    isModule <span style="color: #339933;">=</span> format <span style="color: #339933;">===</span> <span style="color: #3366CC;">'module'</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">}</span>
+  <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">(</span>isModule<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    <span style="color: #000066; font-weight: bold;">const</span> <span style="color: #009900;">{</span> ModuleWrap <span style="color: #009900;">}</span> <span style="color: #339933;">=</span> internalBinding<span style="color: #009900;">(</span><span style="color: #3366CC;">'module_wrap'</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000066; font-weight: bold;">new</span> ModuleWrap<span style="color: #009900;">(</span>filename<span style="color: #339933;">,</span> <span style="color: #003366; font-weight: bold;">undefined</span><span style="color: #339933;">,</span> source<span style="color: #339933;">,</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000066; font-weight: bold;">return</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">}</span>
+&nbsp;
+  wrapSafe<span style="color: #009900;">(</span>filename<span style="color: #339933;">,</span> source<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre>
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>received 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 text-right">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-l-md rounded-t-md bg-gray-200 dark:border-gray-900 dark:bg-gray-700">
+                                <span class="">
+                                    lorem ipsum dolor sit amet consectetur adipisicing elit
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>send 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 ">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-r-md rounded-t-md dark:border-gray-600">
+                                <span class="">
+                                    lorem ipsum dolor sit amet consectetur adipisicing elit
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>received 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" p-4 text-right">
+                            <content class="max-w-full overflow-scroll inline-block py-2 border px-6 rounded-l-md rounded-t-md bg-gray-200 dark:border-gray-900 dark:bg-gray-700">
+                                <span class="">
+                                    lorem ipsum dolor sit amet consectetur adipisicing elit
+                                </span>
+                            </content>
+                            <footer class="text-xs text-gray-500">
+                                <time>send 10:40am</time>
+                            </footer>
+                        </div>
+                    </li>
+                </ul>
+            </content>
+            <footer>
+                <form>
+                    <div class="w-full">
+                        <div class="px-4 py-2 bg-white dark:bg-gray-800 border-t dark:border-gray-600">
+                            <label for="reply" class="sr-only">Your reply</label>
+                            <textarea id="reply" rows="3" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a reply..." required></textarea>
+                        </div>
+                        <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+                            <button type="submit" class="inline-flex items-center py-2 px-5 text-xs font-medium text-center text-white bg-blue-700 rounded-sm focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                                Send
+                            </button>
+                            <div class="flex pl-0 space-x-1 sm:pl-2">
+                                <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+                                    <span class="sr-only">Attach file</span>
+                                </button>
+                                <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                                    <span class="sr-only">Set location</span>
+                                </button>
+                                <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                                    <span class="sr-only">Upload image</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
